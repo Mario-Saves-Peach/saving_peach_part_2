@@ -64,5 +64,13 @@ RSpec.describe 'nextMove(n, r, c, grid) Error Handling' do
 
             expect(response).to eq("Error: Column input is incorrect")
         end
+
+        it 'Returns Error if mario is not in the inputed spot' do
+            c = 4
+
+            response = nextMove(@n, @r, c, @grid)
+
+            expect(response).to eq("Error: Mario is not in the position you inputed")
+        end
     end
 end
