@@ -76,4 +76,6 @@ def nextMove(n, r, c, grid)
     vertical = marios_position[:row].to_i - peaches_position[:row].to_i
 
     horizontal = marios_position[:column].to_i - peaches_position[:column].to_i
+
+    return directions(vertical, horizontal)[0]
 end
