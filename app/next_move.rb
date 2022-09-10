@@ -1,3 +1,4 @@
+require 'pry'
 def gettingStated
     number = gets.to_i
 
@@ -30,6 +31,8 @@ def error_handling(n, r, c, grid_array)
         return "Error: Row input is incorrect"
     elsif (0 <= c && c <= (n - 1)) == false
         return "Error: Column input is incorrect"
+    elsif findMario(grid_array)[:row].to_i == r || findMario(grid_array)[:column].to_i == c
+        return "Error: Mario is not in the position you inputed"
     end
 end
 
