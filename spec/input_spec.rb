@@ -11,18 +11,18 @@ RSpec.describe 'nextMove(n, r, c, grid) Error Handling' do
     end
 
     describe 'number input errors' do
-        it 'returns error if n is not an odd number from 3 - 99' do
-            n = 4
+        it 'returns error if n is not a number from 2 - 99' do
+            n = 1
 
             response = nextMove(n, @r, @c, @grid)
 
-            expect(response).to eq('Error: Input Needs to be an Odd Number Between 3 - 99')
+            expect(response).to eq('Error: Input Needs to be a Number Between 2 - 99')
 
             n = 101
 
             response = nextMove(n, @r, @c, @grid)
 
-            expect(response).to eq('Error: Input Needs to be an Odd Number Between 3 - 99')
+            expect(response).to eq('Error: Input Needs to be a Number Between 2 - 99')
         end
     end
 
