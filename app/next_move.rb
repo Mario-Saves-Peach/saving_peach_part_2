@@ -38,6 +38,32 @@ def findPeach(grid)
     end
 end
 
+def directions(vartical, horizontal)
+    directions = []
+
+    if vartical > 0
+        vartical.times do
+            directions << "UP"
+        end
+    elsif vartical < 0
+        vartical.abs.times do
+            directions << "DOWN"
+        end
+    end
+
+    if horizontal > 0
+        horizontal.times do
+            directions << "LEFT"
+        end
+    elsif horizontal < 0
+        horizontal.abs.times do
+            directions << "RIGHT"
+        end
+    end
+
+    return directions
+end
+
 def nextMove(n, r, c, grid)
     if error_handling(n, r, c, grid) != nil
         return error_handling(n, r, c, grid)
