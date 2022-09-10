@@ -43,8 +43,14 @@ RSpec.describe 'nextMove(n, r, c, grid) Error Handling' do
     end
 
     describe 'row and column input errors' do
-        it 'Returns Error if row is inputed incorrecly' do
+        it 'Returns Error if row is inputed incorrecly (Negative Numbers Included)' do
             r = 5
+
+            response = nextMove(@n, r, @c, @grid)
+
+            expect(response).to eq("Error: Row input is incorrect")
+
+            r = -2
 
             response = nextMove(@n, r, @c, @grid)
 
