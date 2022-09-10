@@ -54,9 +54,7 @@ RSpec.describe 'nextMove(n, r, c, grid) Error Handling' do
         it 'Returns Error if column is inputed incorrecly' do
             c = 7
 
-            grid = [ ['-', '-', '-', '-', '-'], ['-', '-', '-', 'p', '-'], ['-', '-', '-', '-', '-'], ['-', '-', '-', '-', 'm'], ['-', '-', '-', '-', '-']]
-
-            response = nextMove(@n, @r, c, grid)
+            response = nextMove(@n, @r, c, @grid)
 
             expect(response).to eq("Error: Column input is incorrect")
         end
