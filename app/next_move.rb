@@ -26,9 +26,9 @@ def error_handling(n, r, c, grid_array)
         return 'Error: Input Needs to be a Number Between 2 - 99'
     elsif number_confirmation && grid_confirmation == false
         return "Grid Doesn't Match n x n Format"
-    elsif (r <= (n - 1)) == false
+    elsif (0 <= r && r <= (n - 1)) == false
         return "Error: Row input is incorrect"
-    elsif (c <= (n - 1)) == false
+    elsif (0 <= c && c <= (n - 1)) == false
         return "Error: Column input is incorrect"
     end
 end
