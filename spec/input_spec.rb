@@ -1,13 +1,13 @@
 require 'rails_helper'
 require 'pry'
-# require './app/next_move.rb'
+require './app/next_move.rb'
 
 RSpec.describe 'nextMove(n, r, c, grid) Error Handling' do
     before :each do
         @n = 5
         @r = 2
         @c = 3
-        @grid = '----------p-m------------'
+        @grid = [ ['-', '-', '-', '-', '-'], ['-', '-', '-', '-', '-'], ['p', '-', 'm', '-', '-'], ['-', '-', '-', '-', '-'], ['-', '-', '-', '-', '-']]
     end
 
     describe 'number input errors' do
@@ -38,7 +38,7 @@ RSpec.describe 'nextMove(n, r, c, grid) Error Handling' do
         it 'Returns Error if grid formatted correctly' do
             response = nextMove(@n, @r, @c, @grid)
 
-            expect(@grid.count).to eq(@n)
+            expect(@grid.size).to eq(@n)
         end
     end
 
@@ -54,7 +54,9 @@ RSpec.describe 'nextMove(n, r, c, grid) Error Handling' do
         it 'Returns Error if column is inputed incorrecly' do
             c = 7
 
-            response = nextMove(@n, @r, c, @grid)
+            grid = [ ['-', '-', '-', '-', '-'], ['-', '-', '-', 'p', '-'], ['-', '-', '-', '-', '-'], ['-', '-', '-', '-', 'm'], ['-', '-', '-', '-', '-']]
+
+            response = nextMove(@n, @r, c, grid)
 
             expect(response).to eq("Error: Column input is incorrect")
         end
