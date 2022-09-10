@@ -25,4 +25,14 @@ RSpec.describe 'nextMove(n, r, c, grid) Error Handling' do
             expect(response).to eq('Error: Input Needs to be an Odd Number Between 3 - 99')
         end
     end
+
+    describe 'grid input errors' do
+        it 'Returns Error if grid is not n x n format' do
+            n = 7
+
+            response = nextMove(n, @r, @c, @grid)
+
+            expect(response).to eq("Grid Doesn't Match n x n Format")
+        end
+    end
 end
