@@ -1,4 +1,21 @@
-require 'pry'
+def gettingStated
+    number = gets.to_i
+
+    r,c = gets.strip.split.map {|num| num.to_i}
+
+    grid = Array.new
+
+    number.times do
+        grid << gets.strip.split('')
+    end
+
+    return {
+        number: number.to_i,
+        row: r.to_i,
+        column: c.to_i,
+        grid: grid
+    }
+end
 
 def error_handling(n, r, c, grid_array)
     number_confirmation = (2 <= n && n < 100)
@@ -79,3 +96,7 @@ def nextMove(n, r, c, grid)
 
     return directions(vertical, horizontal)[0]
 end
+
+input = gettingStated
+
+puts nextMove(input[:number], input[:row], input[:column], input[:grid])
