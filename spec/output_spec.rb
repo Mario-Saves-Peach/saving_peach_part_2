@@ -15,4 +15,10 @@ RSpec.describe 'nextMove(n, r, c, grid) Output' do
 
         expect(response).to eq({:row=>"2", :column=>"3"})
     end
+
+    it 'locate Peaches position' do
+        response = findPeach(@gird)
+
+        expect(response).to eq({:row=>"2", :column=>"0"})
+    end
 end
