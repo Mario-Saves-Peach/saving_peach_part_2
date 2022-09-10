@@ -50,5 +50,13 @@ RSpec.describe 'nextMove(n, r, c, grid) Error Handling' do
 
             expect(response).to eq("Error: Row input is incorrect")
         end
+
+        it 'Returns Error if column is inputed incorrecly' do
+            c = 7
+
+            response = nextMove(@n, @r, c, @grid)
+
+            expect(response).to eq("Error: Column input is incorrect")
+        end
     end
 end
