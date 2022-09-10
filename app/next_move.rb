@@ -27,6 +27,17 @@ def findMario(grid)
     end
 end
 
+def findPeach(grid)
+    grid.each_with_index do |array, index| 
+        if array.include?('p')
+            hash = Hash.new()
+            hash[:row] = "#{index}"
+            hash[:column] = "#{array.index('p')}"
+            return hash
+        end
+    end
+end
+
 def nextMove(n, r, c, grid)
     if error_handling(n, r, c, grid) != nil
         return error_handling(n, r, c, grid)
