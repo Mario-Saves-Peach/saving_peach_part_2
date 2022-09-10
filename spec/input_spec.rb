@@ -1,6 +1,6 @@
 require 'rails_helper'
 require 'pry'
-# require './app/next_move.rb'
+require './app/next_move.rb'
 
 RSpec.describe 'nextMove(n, r, c, grid) Error Handling' do
     before :each do
