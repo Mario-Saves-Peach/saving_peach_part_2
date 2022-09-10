@@ -42,4 +42,12 @@ def nextMove(n, r, c, grid)
     if error_handling(n, r, c, grid) != nil
         return error_handling(n, r, c, grid)
     end
+
+    marios_position = findMario(grid)
+
+    peaches_position = findPeach(grid)
+
+    vertical = marios_position[:row].to_i - peaches_position[:row].to_i
+
+    horizontal = marios_position[:column].to_i - peaches_position[:column].to_i
 end
