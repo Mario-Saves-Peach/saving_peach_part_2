@@ -7,17 +7,17 @@ RSpec.describe 'nextMove(n, r, c, grid) Output' do
         @n = 5
         @r = 2
         @c = 3
-        @grid = [ ['-', '-', '-', '-', '-'], ['-', '-', '-', '-', '-'], ['p', '-', 'm', '-', '-'], ['-', '-', '-', '-', '-'], ['-', '-', '-', '-', '-']]
+        @grid = [ ['-', '-', '-', '-', '-'], ['-', '-', '-', '-', '-'], ['p', '-', '-', 'm', '-'], ['-', '-', '-', '-', '-'], ['-', '-', '-', '-', '-']]
     end
 
     it 'confirm marios position' do
-        response = findMario(@gird)
+        response = findMario(@grid)
 
         expect(response).to eq({:row=>"2", :column=>"3"})
     end
 
     it 'locate Peaches position' do
-        response = findPeach(@gird)
+        response = findPeach(@grid)
 
         expect(response).to eq({:row=>"2", :column=>"0"})
     end
