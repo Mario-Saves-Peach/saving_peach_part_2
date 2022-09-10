@@ -34,5 +34,11 @@ RSpec.describe 'nextMove(n, r, c, grid) Error Handling' do
 
             expect(response).to eq("Grid Doesn't Match n x n Format")
         end
+
+        it 'Returns Error if grid formatted correctly' do
+            response = nextMove(@n, @r, @c, @grid)
+
+            expect(@grid.count).to eq(@n)
+        end
     end
 end
