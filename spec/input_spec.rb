@@ -43,8 +43,14 @@ RSpec.describe 'nextMove(n, r, c, grid) Error Handling' do
     end
 
     describe 'row and column input errors' do
-        it 'Returns Error if row is inputed incorrecly' do
+        it 'Returns Error if row is inputed incorrecly (Negative Numbers Included)' do
             r = 5
+
+            response = nextMove(@n, r, @c, @grid)
+
+            expect(response).to eq("Error: Row input is incorrect")
+
+            r = -2
 
             response = nextMove(@n, r, @c, @grid)
 
@@ -57,6 +63,14 @@ RSpec.describe 'nextMove(n, r, c, grid) Error Handling' do
             response = nextMove(@n, @r, c, @grid)
 
             expect(response).to eq("Error: Column input is incorrect")
+        end
+
+        it 'Returns Error if mario is not in the inputed spot' do
+            c = 4
+
+            response = nextMove(@n, @r, c, @grid)
+
+            expect(response).to eq("Error: Mario is not in the position you inputed")
         end
     end
 end
