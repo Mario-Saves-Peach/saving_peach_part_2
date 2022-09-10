@@ -11,6 +11,8 @@ def error_handling(n, r, c, grid_array)
         return "Grid Doesn't Match n x n Format"
     elsif (r <= (n - 1)) == false
         return "Error: Row input is incorrect"
+    elsif (c <= (n - 1)) == false
+        return "Error: Column input is incorrect"
     end
 
 end
