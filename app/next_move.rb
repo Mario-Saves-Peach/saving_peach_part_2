@@ -1,4 +1,3 @@
-require 'pry'
 def gettingStated
     number = gets.to_i
 
