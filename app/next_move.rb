@@ -14,13 +14,10 @@ def error_handling(n, r, c, grid_array)
     elsif (c <= (n - 1)) == false
         return "Error: Column input is incorrect"
     end
-
 end
 
 def nextMove(n, r, c, grid)
-
     if error_handling(n, r, c, grid) != nil
         return error_handling(n, r, c, grid)
     end
-
 end
