@@ -21,4 +21,10 @@ RSpec.describe 'nextMove(n, r, c, grid) Output' do
 
         expect(response).to eq({:row=>"2", :column=>"0"})
     end
+    
+    it 'shows mario the next move to Peach!' do
+        response = nextMove(@n, @r, @c, @grid)
+
+        expect(response).to eq("LEFT")
+    end
 end
