@@ -1,6 +1,6 @@
 <h1 align="center">Help Mario Save Princess Peach Again!</h1>
 
-<p align='center'> Oh No! Princess Peach has been captured again and sent to a random place on the grid. Do you have what it takes to find the princess and save the day again? Find out by playing this game and it will show you the next move you need to take to save Princess Peach! You'd think Princess Peach would be more aware of her surroundings, but it's fine, she's still the princess.</p> 
+<p align='center'> Oh No! Princess Peach has been captured again and sent to a random place on the grid. Do you have what it takes to find the princess and save the day again? Find out by playing this game and it will show you the next move you need to take to save Princess Peach! You'd think Princess Peach would be more aware of her surroundings by now, but it's fine, she's still the princess.</p> 
 
 <br> 
 
