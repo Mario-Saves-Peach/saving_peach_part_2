@@ -88,8 +88,10 @@ def directions(vertical_distance, horizontal_distance)
 end
 
 def nextMove(n, r, c, grid)
-    if error_handling(n, r, c, grid) != nil
-        return error_handling(n, r, c, grid)
+    error = error_handling(n, r, c, grid)
+    
+    if error != nil
+        return error
     end
 
     marios_position = findMario(grid)
