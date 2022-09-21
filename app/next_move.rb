@@ -46,14 +46,13 @@ def findMario(grid)
 end
 
 def findPeach(grid)
-    grid.each_with_index do |array, index| 
-        if array.include?('p')
-            hash = Hash.new()
-            hash[:row] = "#{index}"
-            hash[:column] = "#{array.index('p')}"
-            return hash
-        end
-    end
+    hash = Hash.new
+
+    hash[:row] = grid.find_index{|array| array.include?('p')}
+
+    hash[:column] = grid.find{|array| array.include?('p')}.index('p')
+
+    return hash
 end
 
 def directions(vertical_distance, horizontal_distance)
