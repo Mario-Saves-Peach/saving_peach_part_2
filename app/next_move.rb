@@ -36,14 +36,13 @@ def error_handling(n, r, c, grid_array)
 end
 
 def findMario(grid)
-    grid.each_with_index do |array, index| 
-        if array.include?('m')
-            hash = Hash.new()
-            hash[:row] = "#{index}"
-            hash[:column] = "#{array.index('m')}"
-            return hash
-        end
-    end
+    hash = Hash.new
+
+    hash[:row] = grid.find_index{|array| array.include?('m')}
+
+    hash[:column] = grid.find{|array| array.include?('m')}.index('m')
+
+    return hash
 end
 
 def findPeach(grid)
@@ -89,7 +88,7 @@ end
 
 def nextMove(n, r, c, grid)
     error = error_handling(n, r, c, grid)
-    
+
     if error != nil
         return error
     end
