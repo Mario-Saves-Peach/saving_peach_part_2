@@ -57,15 +57,15 @@ def findPeach(grid)
     end
 end
 
-def directions(vartical, horizontal)
+def directions(vertical, horizontal)
     directions = []
 
-    if vartical > 0
-        vartical.times do
+    if vertical > 0
+        vertical.times do
             directions << "UP"
         end
-    elsif vartical < 0
-        vartical.abs.times do
+    elsif vertical < 0
+        vertical.abs.times do
             directions << "DOWN"
         end
     end
