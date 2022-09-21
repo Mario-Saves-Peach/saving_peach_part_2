@@ -57,27 +57,31 @@ def findPeach(grid)
     end
 end
 
-def directions(vertical, horizontal)
+def directions(vertical_distance, horizontal_distance)
     directions = []
 
-    if vertical > 0
-        vertical.times do
-            directions << "UP"
-        end
-    elsif vertical < 0
-        vertical.abs.times do
-            directions << "DOWN"
-        end
+    vertical_position = ''
+
+    horizontal_position = ''
+
+    if vertical_distance > 0
+        vertical_position << "UP"
+    elsif vertical_distance < 0
+        vertical_position << "DOWN"
     end
 
-    if horizontal > 0
-        horizontal.times do
-            directions << "LEFT"
-        end
-    elsif horizontal < 0
-        horizontal.abs.times do
-            directions << "RIGHT"
-        end
+    if horizontal_distance > 0
+        horizontal_position << "LEFT"
+    elsif horizontal_distance < 0
+        horizontal_position << "RIGHT"
+    end
+
+    vertical_distance.abs.times do
+        directions << vertical_position
+    end
+
+    horizontal_distance.abs.times do
+        directions << horizontal_position
     end
 
     return directions
