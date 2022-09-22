@@ -11,19 +11,19 @@ RSpec.describe 'nextMove(n, r, c, grid) Output' do
     end
 
     it 'confirm marios position' do
-        response = findMario(@grid)
+        response = MoveFinder.new.findMario(@grid)
 
         expect(response).to eq({:row=>2, :column=>3})
     end
 
     it 'locate Peaches position' do
-        response = findPeach(@grid)
+        response = MoveFinder.new.findPeach(@grid)
 
         expect(response).to eq({:row=>2, :column=>0})
     end
 
     it 'shows mario the next move to Peach!' do
-        response = nextMove(@n, @r, @c, @grid)
+        response = MoveFinder.new.getNextMove(@n, @r, @c, @grid)
 
         expect(response).to eq("LEFT")
     end
@@ -33,7 +33,7 @@ RSpec.describe 'nextMove(n, r, c, grid) Output' do
         c = 3
         grid = [ ['-', '-', '-', 'm', '-'], ['-', '-', '-', '-', '-'], ['p', '-', '-', '-', '-'], ['-', '-', '-', '-', '-'], ['-', '-', '-', '-', '-']]
 
-        response = nextMove(@n, r, c, grid)
+        response = MoveFinder.new.getNextMove(@n, r, c, grid)
 
         expect(response).to eq("DOWN")
     end
